@@ -35,6 +35,21 @@ p {
     gap: 40px;
 }
 
+.A2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    gap: 40px;
+    margin: 20px;
+}
+
 ul {
     list-style-type: none;
     padding: 0;
@@ -46,7 +61,7 @@ ul {
     justify-content: space-between;
     align-items: center;
     background-color: #333;
-    padding: 10px 20px;
+    padding: 20px 20px;
     margin: 0;
   }
   
@@ -105,4 +120,19 @@ ul {
     height: 250px;
 }
 
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-size: 48px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://photostudio44.com/wp-content/uploads/2019/08/Downtown-Boston-Skylines.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: lightblue;
+    padding: 50px;
+    height: 400px;
+}
 
