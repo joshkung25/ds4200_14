@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 h1 {
     text-align: center;
 }
@@ -14,9 +20,19 @@ p {
 }
 
 .A {
-    border: 5px solid black;
-    padding: 20px 20px 20px 20px;
-    background-color: rgb(199, 176, 221);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    background-color: white;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    width: 90%;
+    gap: 40px;
 }
 
 ul {
@@ -31,6 +47,7 @@ ul {
     align-items: center;
     background-color: #333;
     padding: 10px 20px;
+    margin: 0;
   }
   
 .navbar .logo a {
