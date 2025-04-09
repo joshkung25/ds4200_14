@@ -43,14 +43,15 @@ crimeCounts.then(function(data) {
        .append('svg')
        .attr('width', width)
        .attr('height', height)
-       .style('background', '#e9f7f2');
+       .style('background', '#FFFFFF');
 
 
 
 
-   let xScale = d3.scaleLinear()  // Using scaleLinear for continuous x-axis values (years)
-       .domain([d3.min(data, d => d.YEAR), d3.max(data, d => d.YEAR)])
-       .range([margin.left, width - margin.right]);
+    let xScale = d3.scaleBand()  // Using scaleBand for discrete x-axis values (years)
+       .domain(data.map(d => d.YEAR))  // Set the domain to the list of unique years
+       .range([margin.left, width - margin.right])
+       .padding(0.1); 
 
 
        function drawPlot(filteredData) {
@@ -65,12 +66,22 @@ crimeCounts.then(function(data) {
            let xAxis = svg
                .append('g')
                .attr('transform', `translate(0,${height - margin.bottom})`)
-               .call(d3.axisBottom().scale(xScale));
+               .call(d3.axisBottom(xScale)
+               .tickSize(10)  
+               .tickPadding(0)  // Adjust space between the tick marks and labels
+           );
+       
       
            xAxis
                .selectAll("text")
                .attr("transform", "rotate(-25)")
-               .style("text-anchor", "end");
+               .style("text-anchor", "end")
+               .attr("dx", -45); 
+
+            xAxis
+               .selectAll("line")
+               .attr("x1", -45)
+               .attr("x2", -45);
       
            let yAxis = svg
                .append('g')
@@ -88,7 +99,7 @@ crimeCounts.then(function(data) {
       
            // Add y-axis label
            yAxis.append("text")
-               .attr("transform", `translate(-40, ${height / 2}) rotate(-90)`)
+               .attr("transform", `translate(-50, ${height / 2}) rotate(-90)`)
                .attr("text-anchor", "middle")
                .style("fill", "black")
                .style("font-size", "13px")
