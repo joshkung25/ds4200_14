@@ -3,20 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homework 3 D3 part solution </title>
+    <title>Personal Website</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header>
+        <nav class="navbar">
+          <div class="logo">
+            <a href="#">Crimes in Boston</a>
+          </div>
+          <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="visualizations.html">Visualizations</a></li>
+            <li><a href="results.html">Results</a></li>
+            <li><a href="https://www.linkedin.com/in/josh-kung">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
 
-    <h1>Solution for the box-plot</h1>
-    <div id="boxplot"></div>
+      <div class="main-content">
+        <h1 style = "color:green; font-size: 48px;">CRIMES IN BOSTON</h1>
+        <img src="https://thespun.com/.image/t_share/MjA4NDI0MDYzMzA2MDQ4Njg1/2024-nba-playoffs---oklahoma-city-thunder-v-dallas-mavericks.jpg" alt="" width = 500>
+        <h3>The best player in the NBA. This is SGA's <a href="about.html" id="navigationLink">case</a> for MVP.</h3>
+        <p class = "A"> Robberies can occur in every city in the United States and can affect public safety as well as the city’s reputation. In Boston, these crimes do not only pose a threat to individuals but also instill fear in local communities and disrupt the day-to-day lives of these residents. This project aims to dive deep into analyzing Boston crime data. The question of this project is if and how robbery crimes changed in Boston over the period between 2015 and 2018? By analyzing the data at hand, many statistical patterns can be visualized and explored as we aim to uncover some of the trends behind when, where, and why these crimes occur. This data could be used to target high-risk areas of robberies and look at communities where this crime occurs most frequently. The ability to understand these potential causes will help support efforts in Boston to make the city a safer place.  </p>
+      </div>
+    <script>
+        const navigationButton = document.getElementById('navigationButton')
+        navigationButton.addEventListener('click', function(){
+            window.location.href = 'test.html';
+        }
 
-    <h1>Solution for the side-by-side bar plot</h1>
-    <div id="barplot"></div>
-
-    <h1>Solution for the line plot</h1>
-    <div id="lineplot"></div>
-    
-    <script src='https://d3js.org/d3.v7.min.js'></script>
-    <script src='templete.js'></script>   
+        )
+    </script>
 </body>
 </html>

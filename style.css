@@ -1,0 +1,91 @@
+h1 {
+    text-align: center;
+}
+
+p {
+    width: 800px;
+    margin: 0 auto;
+}
+
+#main {
+    color: blue;
+    background-color: beige;
+    width: 500px;
+}
+
+.A {
+    border: 5px solid black;
+    padding: 20px 20px 20px 20px;
+    background-color: rgb(199, 176, 221);
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
+  }
+  
+.navbar .logo a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+}
+  
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+  
+.nav-links li {
+    margin: 0 15px;
+}
+  
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+  
+.nav-links a:hover {
+    color: #f1c40f;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: rgb(255,255,242);
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid black;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: lightblue;
+    margin: 40px;
+    padding: 40px;
+    border: 5px solid black;
+}
+
+.card {
+    border: 5px solid black;
+    width: 250px;
+    height: 250px;
+}
+
+
