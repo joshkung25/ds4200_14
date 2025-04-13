@@ -73,7 +73,7 @@ crimeCounts.then(function(data) {
                 .attr("x", -10)  
                 .attr("y", 10)   
                 .style("text-anchor", "end")
-                .style("font-size", "8px");
+                .style("font-size", "10px");
 
       
            let yAxis = svg
