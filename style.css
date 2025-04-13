@@ -11,7 +11,7 @@ h1 {
 p {
     width: 800px;
     margin: 0 auto;
-    font-size: 19px;
+    font-size: 20px;
 }
 
 #main {
@@ -53,6 +53,7 @@ ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
+    font-size: 20px;
   }
 
 .navbar {
