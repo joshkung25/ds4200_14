@@ -24,21 +24,16 @@
           <h1>Crimes by Different Districts</h1>
           <iframe src="crime_map.html" width="800" height="600" style="border:none;"></iframe>
           <h2>Key Insights</h2>
-          <p> Generally, the most important thing to know about a crime is where you are in relation to it. This visualization is designed to show where crimes are committed on a district-by-district
-             basis intuitively. Another important thing to know, although probably not as critical for a concerned citizen, is the number of crimes that occur in each district. Thus, the tooltip and 
-             selection utility for this visualization allows the user to identify the number of crimes that occurred in each district.
-          </p>
-          <p> The most crimes occur in Roxbury. Downtown did not contain as many crimes. Areas closer to the center of the city (more populated) tended to have more crime than those further from the 
-            city (less populated). 
+          <p> The most crimes occur in Roxbury, while the least crimes occur in the Downtown. This follows from the logical assumption that Downtown is first policed heavily and second has a lower population
+            (and thus a lower amount of opportunities to commit crime) than most of the other districts. Additionally, the amount of crime follows closely with the population density of each district, with 
+            less populated districts like West Roxbury, Hyde Park, and East Boston having lower crime rates than more populated districts like Roxbury, Dorchester, and South End. The outlier to this trend is 
+            still the Downtown district, which has a relatively high population density(compared to Hyde Park) but the lowest amount of crime.
          </p>
         </div>
         <div class = "A">
           <h1>Crime by Street</h1>
           <iframe src="all_offense_bar.html" width="800" height="600" style="border:none;"></iframe>
           <h2>Key Insights</h2>
-          <p> When moving through a city, knowing which streets are safe and which streets are not is key to avoiding any crime. This visualization helps with determining outlier streets that may be 
-            unsafe, as well as allowing an analyst to highlight specific streets or crimes that need to be addressed in policy or via targeted policing. 
-          </p>
           <p> The graph identifies several major streets that have a larger proportion of several selected crimes. For example, Washington St. and Boylston St. both have significantly more crime than 
             several of the other streets with larger crime totals, such as Blue Hill Ave. or Newbury St. Notably, Washington St. has significantly more occurrences of Aggravated Assault compared to 
             Boylston St. Newbury St. also has very few instances of Robbery or Aggravated Assault, which is notable compared to similar roads like Blue Hill or Huntington.
@@ -52,11 +47,6 @@
           <script src='https://d3js.org/d3.v7.min.js'></script>
           <script src='templete.js'></script> 
           <h2>Key Insights</h2>
-          <p> Crime statistics, just like population or voter registration rolls, change year over year. Visualizing the overall crime data for Boston yearly allows a data analyst or policy maker to determine 
-            if a new policy is positively affecting the community. For example, a visualization of crime before and after the implementation of broken-windows policing could allow a politician to determine if 
-            the crime-fighting tactic is useful. Additionally, crime specific filtering allows tailored policy-making for each subset of crime, as well as indicating general crime trends like increased poverty
-             leading to larger robbery reports or increased organized crime being potentially correlated with homicides or drug offenses.  
-            </p>
             <p> From the graph, you can see an overall trend with all the crimes. You can see there tends to be a pattern where the total amount of crimes dip in the winter months and then spike in the summer months. 
               This makes sense as people get out more in the summer, which can lead to more opportunities for crime. This trend is really noticeable with violent crimes such as aggravated assault and harassment. You 
               can see trends that some crimes are going down, you can notice this with robbery and residential burglary. The lower-number crimes can see dramatic spikes because of how little they appear in the dataset.
@@ -67,10 +57,6 @@
           <h1>Crime by Weekday</h1>
           <iframe src="weekly_bar_chart.html" width="800" height="600" style="border:none;"></iframe>
           <h2>Key Insights</h2>
-          <p> Weekday visualization allows analysts and citizens alike to observe trends and commonalities across different crimes over the week. This graph ensures that there are only 7 major bars to keep track of
-             and allows a visualist to identify both the most common crimes on each weekday but also the total number of crimes on each weekday, useful for adaptive police-work or for ensuring transit or group plans 
-             are as safe as possible.  
-            </p>
             <p> Overall, crime trends to around 40 thousand occurrences Monday-Friday, with Thursday being the lowest weekday-crime day outside of the weekend. Thursday ties with Saturday for weekend crimes, while 
               Sunday has the lowest crime overall by around 5 thousand reported crimes. Notably, the most common crime overall is “Motor Vehicle Accident Response”. The second most common crime(that is a crime) is
                Larceny, meaning theft, closely followed by Medical Assistance - again another 911 code and Investigate Person, which indicates the police performing an investigation into an individual for other issues
@@ -81,10 +67,6 @@
             <h1>Crime Comparison Across District</h1>
             <iframe src="scatterplot.html" width="800" height="600" style="border:none;"></iframe>
             <h2>Key Insights</h2>
-            <p> Scatterplots are useful to display correlations between various continuous variables. Thus, the utility of the scatterplot for comparing correlations between various crimes is self-evident. A scatterplot 
-              of crime vs. crime data allows an analyst to see overall trends around crimes for the sake of determining if a policy reducing robberies might increase drug offenses or vice versa, as well as determining 
-              if there are outlier districts that have specifically higher or lower rates of individual crimes, opening avenues for investigation.
-            </p>
             <p> Most crimes appear to either follow a positive and mostly linear trend (meaning one crime is associated with another crime) like Fraud vs. Larceny or are unrelated like Other Burglary vs. Ballistics. Notably, 
               there are some interesting outlier cases, like Aircraft vs. Any, where East Boston is guaranteed to be an outlier. This is self-explanatory when you factor in the information that Boston Logan Airport is 
               situated in the East Boston district, meaning that aircraft offenses are nearly guaranteed to occur there over other districts like Roxbury. Gambling is another interesting case, with many districts reporting 
