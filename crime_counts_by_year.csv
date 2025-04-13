@@ -83,9 +83,9 @@ YEAR,OFFENSE_CODE_GROUP,COUNT
 2016,Firearm Discovery,188
 2016,Firearm Violations,552
 2016,Fraud,1816
-2016,HOME INVASION,29
-2016,HUMAN TRAFFICKING,2
-2016,HUMAN TRAFFICKING - INVOLUNTARY SERVITUDE,1
+2016,Home Invasion,29
+2016,Human Trafficking,2
+2016,Human Trafficking - Involuntary Servitude,1
 2016,Harassment,1366
 2016,Harbor Related Incidents,55
 2016,Homicide,47
@@ -149,9 +149,9 @@ YEAR,OFFENSE_CODE_GROUP,COUNT
 2017,Firearm Violations,488
 2017,Fraud,1738
 2017,Gambling,6
-2017,HOME INVASION,32
-2017,HUMAN TRAFFICKING,5
-2017,HUMAN TRAFFICKING - INVOLUNTARY SERVITUDE,1
+2017,Home Invasion,32
+2017,Human Trafficking,5
+2017,Human Trafficking - Involuntary Servitude,1
 2017,Harassment,1479
 2017,Harbor Related Incidents,101
 2017,Homicide,54
@@ -213,7 +213,7 @@ YEAR,OFFENSE_CODE_GROUP,COUNT
 2018,Firearm Discovery,137
 2018,Firearm Violations,397
 2018,Fraud,1485
-2018,HOME INVASION,19
+2018,Home Invasion,19
 2018,Harassment,924
 2018,Harbor Related Incidents,64
 2018,Homicide,37
