@@ -152,6 +152,3 @@ crimeCounts.then(function(data) {
        drawPlot(filteredData);
    });
 });
-
-
-
