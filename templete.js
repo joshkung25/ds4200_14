@@ -24,7 +24,7 @@ crimeCounts.then(function(data) {
 
 
    // Define the dimensions and margins for the SVG
-   let width = 600,
+   let width = 800,
        height = 400;
 
 
