@@ -12,7 +12,7 @@ crimeCounts.then(function(data) {
 
 
        // Extract unique crime types (excluding 'all')
-   const crimeTypes = ["all", ...new Set(data.map(d => d.CRIME_TYPE))];
+   const crimeTypes = ["Select All", ...new Set(data.map(d => d.CRIME_TYPE))];
 
 
        // Populate the dropdown menu with unique crime types
