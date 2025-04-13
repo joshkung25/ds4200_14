@@ -73,7 +73,7 @@ crimeCounts.then(function(data) {
                 .attr("x", -10)  
                 .attr("y", 10)   
                 .style("text-anchor", "end")
-                .style("font-size", "10px");
+                .style("font-size", "8px");
 
       
            let yAxis = svg
@@ -85,7 +85,7 @@ crimeCounts.then(function(data) {
            xAxis
                .append('text')
                .attr('x', width / 2)
-               .attr('y', 50)
+               .attr('y', 65)
                .style("fill", "black")
                .style("font-size", "13px")
                .text('Date');
@@ -152,3 +152,6 @@ crimeCounts.then(function(data) {
        drawPlot(filteredData);
    });
 });
+
+
+
