@@ -1,21 +1,20 @@
-const crimeCounts = d3.csv("crime_counts_by_year.csv");
+const crimeCounts = d3.csv("grouped_crime_data.csv");
 
 
 crimeCounts.then(function(data) {
    // Convert string values to numbers
    data.forEach(function(d) {
-       d.YEAR = +d.YEAR;
-       d.COUNT = +d.COUNT;
-       // Ensure that crime type is a string or category
-       d.CRIME_TYPE = d.OFFENSE_CODE_GROUP || "Unknown";  // Set default value if missing
+        d.DATE = d.DATE;
+        d.COUNT = +d.COUNT;
+        d.CRIME_TYPE = d.OFFENSE_CODE_GROUP;  
    });
 
 
-       // Extract unique crime types (excluding 'all')
-   const crimeTypes = ["all", ...new Set(data.map(d => d.CRIME_TYPE))];
+    // Extract unique crime types (excluding 'Select All')
+   const crimeTypes = ["Select All", ...new Set(data.map(d => d.CRIME_TYPE))];
 
 
-       // Populate the dropdown menu with unique crime types
+    // Populate the dropdown menu with unique crime types
    const crimeFilter = d3.select("#crimeFilter");
    crimeTypes.forEach(function(crime) {
            crimeFilter.append("option")
@@ -25,7 +24,7 @@ crimeCounts.then(function(data) {
 
 
    // Define the dimensions and margins for the SVG
-   let width = 600,
+   let width = 800,
        height = 400;
 
 
@@ -46,16 +45,15 @@ crimeCounts.then(function(data) {
        .style('background', '#FFFFFF');
 
 
-
-
-    let xScale = d3.scaleBand()  // Using scaleBand for discrete x-axis values (years)
-       .domain(data.map(d => d.YEAR))  // Set the domain to the list of unique years
+    let xScale = d3.scalePoint()
+       .domain(data.map(d => d.DATE))
        .range([margin.left, width - margin.right])
-       .padding(0.1); 
+       .padding(0.5);
 
 
        function drawPlot(filteredData) {
-           svg.selectAll("*").remove(); // Clear previous plot
+            // Clear previous plot
+           svg.selectAll("*").remove(); 
       
            // Update yScale based on filteredData
            let yScale = d3.scaleLinear()
@@ -64,24 +62,19 @@ crimeCounts.then(function(data) {
       
            // Draw the axis
            let xAxis = svg
-               .append('g')
-               .attr('transform', `translate(0,${height - margin.bottom})`)
-               .call(d3.axisBottom(xScale)
-               .tickSize(10)  
-               .tickPadding(0)  // Adjust space between the tick marks and labels
-           );
+            .append('g')
+            .attr('transform', `translate(0,${height - margin.bottom})`)
+            .call(d3.axisBottom(xScale));
        
       
-           xAxis
-               .selectAll("text")
-               .attr("transform", "rotate(-25)")
-               .style("text-anchor", "end")
-               .attr("dx", -45); 
-
             xAxis
-               .selectAll("line")
-               .attr("x1", -45)
-               .attr("x2", -45);
+                .selectAll("text")
+                .attr("transform", "rotate(-40)")
+                .attr("x", -10)  
+                .attr("y", 10)   
+                .style("text-anchor", "end")
+                .style("font-size", "10px");
+
       
            let yAxis = svg
                .append('g')
@@ -92,10 +85,10 @@ crimeCounts.then(function(data) {
            xAxis
                .append('text')
                .attr('x', width / 2)
-               .attr('y', 50)
+               .attr('y', 65)
                .style("fill", "black")
                .style("font-size", "13px")
-               .text('Year');
+               .text('Date');
       
            // Add y-axis label
            yAxis.append("text")
@@ -107,7 +100,7 @@ crimeCounts.then(function(data) {
       
            // Draw the line and path with the filtered data
            let line = d3.line()
-               .x(d => xScale(d.YEAR))
+               .x(d => xScale(d.DATE))
                .y(d => yScale(d.COUNT))
                .curve(d3.curveNatural);
       
@@ -134,12 +127,12 @@ crimeCounts.then(function(data) {
        const yearMap = d3.rollup(
            data,
            v => d3.sum(v, d => d.COUNT),
-           d => d.YEAR
+           d => d.DATE
        );
 
 
        // Convert back to array of objects for plotting
-       return Array.from(yearMap, ([YEAR, COUNT]) => ({ YEAR, COUNT }));
+       return Array.from(yearMap, ([DATE, COUNT]) => ({ DATE, COUNT }));
    }
 
 
@@ -152,7 +145,7 @@ crimeCounts.then(function(data) {
        let selectedCrime = this.value;
 
 
-       let filteredData = selectedCrime === "all"
+       let filteredData = selectedCrime === "Select All"
            ? aggregateByYear(data)
            : data.filter(d => d.CRIME_TYPE === selectedCrime);
        // Redraw the plot with filtered data
